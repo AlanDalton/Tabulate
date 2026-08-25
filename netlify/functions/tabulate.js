@@ -76,7 +76,7 @@ GENERAL:
       );
     }
 
-    const table = data.content[0].text;
+    const table = data.content[0].text.trim().replace(/^```html\s*/i, '').replace(/```\s*$/,'');
 
     return new Response(JSON.stringify({ table }), {
       status: 200,
